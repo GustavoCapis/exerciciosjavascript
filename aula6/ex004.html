@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tratamento de dados</title>
+    <style>
+        body{
+            color: aliceblue;
+            background-color: black;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20pt;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var nome = prompt("Digite seu nome")
+        document.write(`Olá, ${nome}! Seu nome tem ${nome.length} letras <br/>`)
+        document.write(`Seu nome em maiúsculo é ${nome.toUpperCase()} <br/>`)//Função pra deixar tudo em Caps
+        document.write(`Seu nome em minúsculo é ${nome.toLowerCase()} <br/>`)//Função para deixar em minúsculo
+
+        var n1 = 1543.5
+        document.write(n1.toFixed(2).replace('.',','))//toFixed permite você passar o número de casas decimais que quer mostrar como parâmetro e o replace é bem sugestivo
+    </script>
+    <br>
+    <script>
+        document.write(n1.toLocaleString('pt-BR', {style: 'currency', currency:'BRL'}))//toLocaleString é um método para inserir valores monetários
+        document.write(n1.toLocaleString('pt-BR', {style: 'currency', currency:'USD'}))
+    </script>
+</body>
+</html>
