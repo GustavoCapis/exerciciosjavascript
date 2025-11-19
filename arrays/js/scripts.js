@@ -79,3 +79,24 @@ console.log(everyUserHasName);
 
 const everyUserHasGoodSalary = data.every((user) => user.salary > 2000)
 console.log(everyUserHasGoodSalary);
+
+// 11 - push
+// Adiciona um elemento ao final do array
+const array = [1, 2, 3, 4, 5];
+array.push(6);
+console.log(array);
+
+// 12 - pop
+// Remove um elemento do final do array
+array.pop();
+console.log(array);
+
+// 13 - unshift
+// Adiciona um elemento no início do array
+array.unshift(7);
+console.log(array);
+
+// 14 - shift
+// Remove elemento do início do array
+array.shift();
+console.log(array);
