@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Caixa de Comentários — Exercício</title>
+  <style>
+    :root{
+      --bg: #f4f6fb;
+      --card: #ffffff;
+      --muted: #6b7280;
+      --accent: #6b46c1;
+      --accent-600: #5a37a8;
+      --danger: #e53e3e;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+      background: linear-gradient(180deg,var(--bg), #eef2ff);
+      color:#111827;
+      padding:24px;
+    }
+    .card{
+      width:100%;
+      max-width:720px;
+      background:var(--card);
+      border-radius:12px;
+      padding:20px;
+      box-shadow:0 10px 30px rgba(11,12,40,0.06);
+    }
+    h1{font-size:20px;margin:0 0 12px}
+    .controls{display:flex;gap:12px;margin-bottom:12px}
+    textarea{
+      flex:1;
+      min-height:80px;
+      resize:vertical;
+      padding:10px 12px;
+      border-radius:8px;
+      border:1px solid #e6e9f2;
+      font-size:14px;
+      outline:none;
+      transition:box-shadow .15s ease,border-color .15s ease
+    }
+    textarea:focus{box-shadow:0 6px 18px rgba(106,90,255,0.08);border-color:var(--accent-600)}
+    #sendBtn{
+      background:var(--accent);
+      color:#fff;
+      border:0;
+      padding:10px 14px;
+      border-radius:8px;
+      cursor:pointer;
+      font-weight:600;
+    }
+
+    .meta{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+    .meta p{margin:0;color:var(--muted);font-size:13px}
+
+    .comments{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      margin-top:8px;
+    }
+    .comment{
+      background:#fbfbff;
+      border:1px solid #eef0ff;
+      padding:12px;
+      border-radius:10px;
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+    }
+    .comment .content{flex:1}
+    .comment p{margin:0 0 6px;font-size:14px}
+    .metaComment{display:flex;gap:8px;align-items:center;font-size:12px;color:var(--muted)}
+    .actions{display:flex;gap:8px;align-items:center}
+    .btn-sm{background:transparent;border:0;padding:6px 8px;border-radius:8px;cursor:pointer}
+    .btn-delete{
+        background-color:var(--danger);
+        color: #fff;
+        font-weight:700;
+        margin-left: 5%;
+    }
+    .empty{color:var(--muted);font-size:14px;text-align:center;padding:18px}
+
+
+    /* responsive */
+    @media (max-width:480px){
+      .controls{flex-direction:column}
+      #sendBtn{width:100%}
+    }
+  </style>
+</head>
+<body>
+  <div class="card" id="commentCard">
+    <h1>Caixa de Comentários</h1>
+
+    <div class="controls">
+      <!-- Texto que o usuário digita -->
+      <textarea id="commentInput" placeholder="Escreva seu comentário..." aria-label="Comentário"></textarea>
+      <!-- Botão para enviar o comentário -->
+      <button id="sendBtn" >Enviar</button>
+    </div>
+
+    <div class="meta">
+      <p id="count">0 comentários</p>
+      <p class="hint">Cada comentário pode ser apagado individualmente</p>
+    </div>
+
+    <!-- Aqui aparecerão os comentários -->
+    <div id="commentsList" class="comments">
+      <p class="empty" id="emptyMsg">Nenhum comentário ainda. Seja o primeiro! 💬</p>
+    </div>
+  </div>
+<script src="ex11.js"></script>
+</body>
+</html>
