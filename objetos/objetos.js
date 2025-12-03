@@ -1,17 +1,17 @@
 //Principais métodos pra suar com objetos
 
 const user = {
-    name: 'Gustavo',
-    idade: 27,
-    adress: {
-        street: 'Rua teste',
-        number: 176,
-    },
+  name: "Gustavo",
+  idade: 27,
+  adress: {
+    street: "Rua teste",
+    number: 176,
+  },
 };
 
-//in verifica se existe uma informação dentro do objeto 
+//in verifica se existe uma informação dentro do objeto
 
-console.log('name' in user)
+console.log("name" in user);
 
 //Object.keys() retorna um vetor com todas as chaves de um objeto
 
@@ -25,8 +25,27 @@ console.log(Object.values(user));
 
 console.log(Object.entries(user));
 
-//Desestruturação 
+//Desestruturação
 //Permite remover parte de um objeto para uma variável a parte
 
 //Rest Operator
 //O rest operator é o ... usado para juntar vários valores em um único pacote.
+
+//Optional Chaining
+//?. é o operador “se existir”. Não precisa ficar usando varios ifs e elses
+
+const user2 = {
+  name: "Gustavo",
+  idade: 27,
+  adress: {
+    street: "Rua teste",
+    number: 176,
+    zip: {
+      code: "7216000",
+      city: "Amsterdam",
+    },
+  },
+};
+
+console.log(user.adress?.zip?.code ?? 'Não informado'); //E aqui ja vemos um uso do nullish coalescing operator
+//O fluxo é: vou tentar acessar o adress desse user, se ele não existir eu paro, se não eu verifico se existe o zip dentro desse adress e exibir o code
