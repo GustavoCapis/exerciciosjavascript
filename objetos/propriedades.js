@@ -30,3 +30,12 @@ delete objeto.idade
 //Após usar o delete
 console.log(objeto);
 
+//Editando propriedade de um objeto
+//Funciona da mesma forma que adicionar, só que você atribui um novo valor e ele sobrescreve o anterior
+//Ainda existe um método mas não é muito usado atualmente
+const user = {
+    usuario: "Gustavo"
+};
+Object.assign(user, {usuario: "Novo nome"});
+console.log(user);
+//Funciona mas é muito verboso
