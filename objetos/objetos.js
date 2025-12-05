@@ -49,3 +49,11 @@ const user2 = {
 
 console.log(user.adress?.zip?.code ?? 'Não informado'); //E aqui ja vemos um uso do nullish coalescing operator
 //O fluxo é: vou tentar acessar o adress desse user, se ele não existir eu paro, se não eu verifico se existe o zip dentro desse adress e exibir o code
+
+//E o que é nullish coalescing operator???
+//Basicamente segue a lógica: usa o valor da esquerda a não ser que ele sejanull ou undefined, se for, usa o da direita
+const foo = null ?? "Sou null";
+console.log(foo);
+
+const baz = "Não sou null nem undefined!" ?? 42;
+console.log(baz);
